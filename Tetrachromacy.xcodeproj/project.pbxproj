@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1016565D82DDB1603807CB /* Pods_Tetrachromacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */; };
 		F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A32198824200F493E0 /* AppDelegate.swift */; };
 		F1D464A62198824200F493E0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A52198824200F493E0 /* MasterViewController.swift */; };
 		F1D464A82198824200F493E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A72198824200F493E0 /* DetailViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tetrachromacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D464A02198824200F493E0 /* Tetrachromacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetrachromacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D464A32198824200F493E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D464A52198824200F493E0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		F1D464AC2198824300F493E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D464AF2198824300F493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D464B12198824300F493E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1016565D82DDB1603807CB /* Pods_Tetrachromacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F619C6C66AE8EAB0F0C2A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EFB4EEF4BBA64EEE92AB482 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */,
+				FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F1D464972198824200F493E0 = {
 			isa = PBXGroup;
 			children = (
 				F1D464A22198824200F493E0 /* Tetrachromacy */,
 				F1D464A12198824200F493E0 /* Products */,
+				4EFB4EEF4BBA64EEE92AB482 /* Pods */,
+				27F619C6C66AE8EAB0F0C2A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1D464B42198824300F493E0 /* Build configuration list for PBXNativeTarget "Tetrachromacy" */;
 			buildPhases = (
+				94675E7C12DF600ABA8FA60A /* [CP] Check Pods Manifest.lock */,
 				F1D4649C2198824200F493E0 /* Sources */,
 				F1D4649D2198824200F493E0 /* Frameworks */,
 				F1D4649E2198824200F493E0 /* Resources */,
+				44C490D3BB21B10AA12F58D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44C490D3BB21B10AA12F58D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94675E7C12DF600ABA8FA60A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tetrachromacy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1D4649C2198824200F493E0 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		F1D464B52198824300F493E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +372,7 @@
 		};
 		F1D464B62198824300F493E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
