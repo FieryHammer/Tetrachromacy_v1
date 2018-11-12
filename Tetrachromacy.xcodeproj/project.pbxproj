@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		BF1016565D82DDB1603807CB /* Pods_Tetrachromacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */; };
 		F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A32198824200F493E0 /* AppDelegate.swift */; };
-		F1D464A62198824200F493E0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A52198824200F493E0 /* MasterViewController.swift */; };
-		F1D464A82198824200F493E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A72198824200F493E0 /* DetailViewController.swift */; };
 		F1D464AB2198824200F493E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D464A92198824200F493E0 /* Main.storyboard */; };
 		F1D464AD2198824300F493E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D464AC2198824300F493E0 /* Assets.xcassets */; };
 		F1D464B02198824300F493E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D464AE2198824300F493E0 /* LaunchScreen.storyboard */; };
+		F1D464C32198881F00F493E0 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464C22198881F00F493E0 /* DashboardVC.swift */; };
+		F1D464C52198882B00F493E0 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464C42198882B00F493E0 /* MenuVC.swift */; };
+		F1D464CC2198A35300F493E0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D464CA21988BC300F493E0 /* SWRevealViewController.m */; };
+		F1D464CE2198A56E00F493E0 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464CD2198A56E00F493E0 /* CircleImageView.swift */; };
+		F1D464D02198B26500F493E0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464CF2198B26500F493E0 /* MenuCell.swift */; };
+		F1D464D22198B3C700F493E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D12198B3C700F493E0 /* Constants.swift */; };
+		F1D464D42198B5F000F493E0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D32198B5F000F493E0 /* SettingsVC.swift */; };
+		F1D464D62198DA0D00F493E0 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D52198DA0D00F493E0 /* ColorService.swift */; };
+		F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D72198DBB200F493E0 /* ThemeColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +28,21 @@
 		3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D464A02198824200F493E0 /* Tetrachromacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetrachromacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D464A32198824200F493E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1D464A52198824200F493E0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		F1D464A72198824200F493E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1D464AA2198824200F493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1D464AC2198824300F493E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D464AF2198824300F493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D464B12198824300F493E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D464C22198881F00F493E0 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		F1D464C42198882B00F493E0 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		F1D464C821988BC200F493E0 /* Tetrachromacy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tetrachromacy-Bridging-Header.h"; sourceTree = "<group>"; };
+		F1D464C921988BC300F493E0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		F1D464CA21988BC300F493E0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F1D464CD2198A56E00F493E0 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		F1D464CF2198B26500F493E0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F1D464D12198B3C700F493E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F1D464D32198B5F000F493E0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		F1D464D52198DA0D00F493E0 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
+		F1D464D72198DBB200F493E0 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,15 +96,72 @@
 		F1D464A22198824200F493E0 /* Tetrachromacy */ = {
 			isa = PBXGroup;
 			children = (
+				F1D464C621988B1A00F493E0 /* Supporting Files */,
+				F1D464BB219884CE00F493E0 /* Utilities */,
+				F1D464BA219884C700F493E0 /* Services */,
+				F1D464B7219884B700F493E0 /* Model */,
+				F1D464B8219884BE00F493E0 /* View */,
+				F1D464B9219884C200F493E0 /* Controller */,
 				F1D464A32198824200F493E0 /* AppDelegate.swift */,
-				F1D464A52198824200F493E0 /* MasterViewController.swift */,
-				F1D464A72198824200F493E0 /* DetailViewController.swift */,
 				F1D464A92198824200F493E0 /* Main.storyboard */,
 				F1D464AC2198824300F493E0 /* Assets.xcassets */,
 				F1D464AE2198824300F493E0 /* LaunchScreen.storyboard */,
 				F1D464B12198824300F493E0 /* Info.plist */,
 			);
 			path = Tetrachromacy;
+			sourceTree = "<group>";
+		};
+		F1D464B7219884B700F493E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464D72198DBB200F493E0 /* ThemeColor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1D464B8219884BE00F493E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464CD2198A56E00F493E0 /* CircleImageView.swift */,
+				F1D464CF2198B26500F493E0 /* MenuCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1D464B9219884C200F493E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464C22198881F00F493E0 /* DashboardVC.swift */,
+				F1D464C42198882B00F493E0 /* MenuVC.swift */,
+				F1D464D32198B5F000F493E0 /* SettingsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F1D464BA219884C700F493E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464D52198DA0D00F493E0 /* ColorService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F1D464BB219884CE00F493E0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464D12198B3C700F493E0 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F1D464C621988B1A00F493E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464C921988BC300F493E0 /* SWRevealViewController.h */,
+				F1D464CA21988BC300F493E0 /* SWRevealViewController.m */,
+				F1D464C821988BC200F493E0 /* Tetrachromacy-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +198,7 @@
 				TargetAttributes = {
 					F1D4649F2198824200F493E0 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -168,13 +242,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D464A82198824200F493E0 /* DetailViewController.swift in Sources */,
-				F1D464A62198824200F493E0 /* MasterViewController.swift in Sources */,
 				F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */,
+				F1D464C32198881F00F493E0 /* DashboardVC.swift in Sources */,
+				F1D464C52198882B00F493E0 /* MenuVC.swift in Sources */,
+				F1D464D62198DA0D00F493E0 /* ColorService.swift in Sources */,
+				F1D464CE2198A56E00F493E0 /* CircleImageView.swift in Sources */,
+				F1D464D22198B3C700F493E0 /* Constants.swift in Sources */,
+				F1D464D42198B5F000F493E0 /* SettingsVC.swift in Sources */,
+				F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */,
+				F1D464D02198B26500F493E0 /* MenuCell.swift in Sources */,
+				F1D464CC2198A35300F493E0 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +437,7 @@
 			baseConfigurationReference = 3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6J7BBYKDN;
 				INFOPLIST_FILE = Tetrachromacy/Info.plist;
@@ -365,6 +447,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhorvath.Tetrachromacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tetrachromacy/Supporting Files/Tetrachromacy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,6 +459,7 @@
 			baseConfigurationReference = FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6J7BBYKDN;
 				INFOPLIST_FILE = Tetrachromacy/Info.plist;
@@ -384,6 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhorvath.Tetrachromacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tetrachromacy/Supporting Files/Tetrachromacy-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

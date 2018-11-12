@@ -6,8 +6,7 @@ target 'Tetrachromacy' do
   use_frameworks!
 
   # Pods for Tetrachromacy
-    pod 'SWRevealViewController', '~> 2.3'
     pod 'Alamofire', '4.5.0'
     pod 'SwiftyJSON', '3.1.4'
-
+    pod 'DropDown'
 end
