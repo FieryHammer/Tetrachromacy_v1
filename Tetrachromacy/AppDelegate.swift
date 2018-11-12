@@ -19,11 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Override point for customization after application launch.
         DropDown.startListeningToKeyboard()
         
+        CURRENT_COLOR = DEFAULT_THEME_COLOR
         ColorService.instance.getColorTheme(for: "Default") { (success, themeColor) in
             if success, let newColor = themeColor {
                 CURRENT_COLOR = newColor
-            } else {
-                CURRENT_COLOR = DEFAULT_THEME_COLOR
             }
         }
         
