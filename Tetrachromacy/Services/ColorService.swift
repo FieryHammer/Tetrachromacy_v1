@@ -35,23 +35,23 @@ class ColorService {
         }
     }
     
-    func getColorTheme(for name: String, completion: @escaping (_ success: Bool) -> ()) {
+    func getColorTheme(for name: String, completion: @escaping (_ success: Bool, _ themeColor: ThemeColor?) -> ()) {
         Alamofire.request("\(HEROKU_URL)/\(name)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: DEFAULT_HEADER).responseJSON { (response) in
             if response.error != nil {
-                completion(false)
+                completion(false, nil)
                 debugPrint(response.error as Any)
                 
                 return
             }
             
-            guard let data = response.data else { completion(false); return }
+            guard let data = response.data else { completion(false, nil); return }
             let json = JSON(data: data)
             
             let primaryColor = json["primary_color"].stringValue
             let secondaryColor = json["secondary_color"].stringValue
-            self.currentColor = ThemeColor(name: name, primaryColor: primaryColor, secondaryColor: secondaryColor)
+            let colorPicked = ThemeColor(name: name, primaryColor: primaryColor, secondaryColor: secondaryColor)
             
-            completion(true)
+            completion(true, colorPicked)
         }
     }
 }

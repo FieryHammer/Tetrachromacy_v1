@@ -48,29 +48,28 @@ class SettingsVC: UIViewController {
                 self.dropDown.selectionAction = { [weak self] (index, item) in
                     self?.themePickerBtn.setTitle(item, for: .normal)
                     
-                    ColorService.instance.getColorTheme(for: item, completion: { (success) in
-                        if success {
-                            self?.themePicked()
+                    ColorService.instance.getColorTheme(for: item, completion: { (success, themeColor) in
+                        if success, let newThemeColor = themeColor {
+                            self?.themePicked(newThemeColor)
                         }
                     })
                 }
             }
         }
-        
-
-        
-        
     }
     
-    func themePicked() {
+    func themePicked(_ theme: ThemeColor) {
+        CURRENT_COLOR = theme
         UIView.animate(withDuration: 0.3) {
-            self.primaryColorView.backgroundColor = ColorService.instance.currentColor.primaryUIColor
-            self.secondaryColorView.backgroundColor = ColorService.instance.currentColor.secondaryUIColor
+            self.primaryColorView.backgroundColor = CURRENT_COLOR.primaryUIColor
+            self.secondaryColorView.backgroundColor = CURRENT_COLOR.secondaryUIColor
             
             if self.primaryColorView.isHidden {
                 self.primaryColorView.isHidden = false
                 self.secondaryColorView.isHidden = false
             }
+            
+            NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
         }
     }
     

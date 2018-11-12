@@ -32,6 +32,9 @@ var CURRENT_COLOR: ThemeColor {
     get {
         return ColorService.instance.currentColor
     }
+    set(newThemeColor) {
+        ColorService.instance.currentColor = newThemeColor
+    }
 }
 
 // Notifications

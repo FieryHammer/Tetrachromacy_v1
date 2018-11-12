@@ -21,6 +21,7 @@
 		F1D464D42198B5F000F493E0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D32198B5F000F493E0 /* SettingsVC.swift */; };
 		F1D464D62198DA0D00F493E0 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D52198DA0D00F493E0 /* ColorService.swift */; };
 		F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464D72198DBB200F493E0 /* ThemeColor.swift */; };
+		F1D464DB21997E0600F493E0 /* UIViewController+ColorSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464DA21997E0600F493E0 /* UIViewController+ColorSwitching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		F1D464D32198B5F000F493E0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F1D464D52198DA0D00F493E0 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
 		F1D464D72198DBB200F493E0 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		F1D464DA21997E0600F493E0 /* UIViewController+ColorSwitching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ColorSwitching.swift"; sourceTree = "<group>"; };
 		FD714E2D942FBFFFBBEEAA69 /* Pods-Tetrachromacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		F1D464A22198824200F493E0 /* Tetrachromacy */ = {
 			isa = PBXGroup;
 			children = (
+				F1D464D921997DD400F493E0 /* Extensions */,
 				F1D464C621988B1A00F493E0 /* Supporting Files */,
 				F1D464BB219884CE00F493E0 /* Utilities */,
 				F1D464BA219884C700F493E0 /* Services */,
@@ -162,6 +165,14 @@
 				F1D464C821988BC200F493E0 /* Tetrachromacy-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1D464D921997DD400F493E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1D464DA21997E0600F493E0 /* UIViewController+ColorSwitching.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				F1D464CE2198A56E00F493E0 /* CircleImageView.swift in Sources */,
 				F1D464D22198B3C700F493E0 /* Constants.swift in Sources */,
 				F1D464D42198B5F000F493E0 /* SettingsVC.swift in Sources */,
+				F1D464DB21997E0600F493E0 /* UIViewController+ColorSwitching.swift in Sources */,
 				F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */,
 				F1D464D02198B26500F493E0 /* MenuCell.swift in Sources */,
 				F1D464CC2198A35300F493E0 /* SWRevealViewController.m in Sources */,

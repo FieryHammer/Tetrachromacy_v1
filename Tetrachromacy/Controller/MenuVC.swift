@@ -21,15 +21,12 @@ class MenuVC: UIViewController {
         tableView.dataSource = self
 
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
+        
+        subscribeToColorSwitchingNotification()
+        viewsWithPrimaryColor = [view]
+        tableViewsWithSecondaryColor = [tableView]
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.3) {
-            self.view.backgroundColor = CURRENT_COLOR.primaryUIColor
-            self.tableView.backgroundColor = CURRENT_COLOR.secondaryUIColor
-            self.tableView.reloadData()
-        }
-    }
+
 }
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {
@@ -41,9 +38,7 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? MenuCell {
             cell.configureWith(title: MENU_TITLES[indexPath.row])
-            UIView.animate(withDuration: 0.3) {
-                cell.backgroundColor = CURRENT_COLOR.secondaryUIColor
-            }
+            cell.backgroundColor = backgroundColorForCell(in: tableView)
             
             return cell
         }
@@ -62,9 +57,4 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        cell.backgroundColor = CURRENT_COLOR.secondaryUIColor
-//    }
-    
 }
