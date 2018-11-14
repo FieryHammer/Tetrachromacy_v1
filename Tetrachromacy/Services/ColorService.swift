@@ -54,4 +54,31 @@ class ColorService {
             completion(true, colorPicked)
         }
     }
+    
+    func uploadImage(_ image: UIImage, completion: @escaping (_ success: Bool, _ themeColor: ThemeColor?) -> ()) {
+        
+        let imageData = image.pngData()!
+            
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData, withName: "image", fileName: "image.png", mimeType: "image/png")
+        }, to: "\(HEROKU_URL)/uploadImage", encodingCompletion: { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                upload.uploadProgress(closure: { (progress) in
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON(completionHandler: { (response) in
+                    print(response.result.value as Any)
+                    
+                    // Response should be usable to create a ThemeColor and pass it instead of nil
+                    completion(true, nil)
+                })
+                
+            case .failure(let encodingError):
+                print(encodingError)
+                completion(false, nil)
+            }
+        })
+    }
 }

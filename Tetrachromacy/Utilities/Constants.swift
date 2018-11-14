@@ -26,6 +26,10 @@ let DEFAULT_HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
 
+let MULTIPART_HEADER = [
+    "Content-Type": "multipart/form-data"
+]
+
 // Shortcuts
 
 let DEFAULT_THEME_COLOR = ThemeColor(name: "Default", primaryColor: "[255, 255, 255]", secondaryColor: "[255, 255, 255]")

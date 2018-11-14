@@ -15,11 +15,16 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var primaryColorView: UIView!
     @IBOutlet weak var secondaryColorView: UIView!
     
+    let imagePicker = UIImagePickerController()
+    
     let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ColorService.instance.themes.removeAll()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
         
         setupDefaultLook()
         setupDropDown()
@@ -73,11 +78,29 @@ class SettingsVC: UIViewController {
         }
     }
     
+    @IBAction func takePhotoPressed(_ sender: Any) {
+        present(imagePicker, animated: true)
+    }
+    
     @IBAction func pickThemePressed(_ sender: Any) {
         dropDown.show()
     }
    
     @IBAction func backPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SettingsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[.editedImage] as? UIImage else { return }
+        ColorService.instance.uploadImage(image) { (success, themeColor) in
+            if success {
+                // Dummy
+                print("Response succesfully recieved!")
+            }
+        }
     }
 }
