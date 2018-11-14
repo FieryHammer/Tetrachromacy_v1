@@ -18,6 +18,7 @@ let MENU_TITLES = [ACCOUNTS_TITLE, CARDS_TITLE, ATM_BRANCHES_TITLE, SETTINGS_TIT
 //URLs
 
 let HEROKU_URL = "https://damp-escarpment-79041.herokuapp.com/api/colors"
+//let HEROKU_URL = "http://localhost:5000/api/colors" // Local testing
 
 // Headers
 
