@@ -139,6 +139,49 @@
             </objects>
             <point key="canvasLocation" x="552.79999999999995" y="193.85307346326837"/>
         </scene>
+        <!--Camera OverlayVC-->
+        <scene sceneID="aq1-U1-oDg">
+            <objects>
+                <viewController storyboardIdentifier="CameraOverlay" id="GGn-4x-hPO" customClass="CameraOverlayVC" customModule="Tetrachromacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c30-lM-wHi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employee" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-aT-uZQ">
+                                <rect key="frame" x="-17" y="207" width="409" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="XJR-cy-zGc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure that both your face and clothes are visible!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JML-nO-I3V">
+                                <rect key="frame" x="20.5" y="104.5" width="334" height="52.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(This overlay disappears in a few seconds)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-xr-J1x">
+                                <rect key="frame" x="36" y="162" width="303" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JML-nO-I3V" firstAttribute="centerX" secondItem="c30-lM-wHi" secondAttribute="centerX" id="1Gd-Nd-oHm"/>
+                            <constraint firstItem="bAK-xr-J1x" firstAttribute="top" secondItem="JML-nO-I3V" secondAttribute="bottom" constant="5" id="4De-MM-gVz"/>
+                            <constraint firstItem="ca3-aT-uZQ" firstAttribute="centerX" secondItem="c30-lM-wHi" secondAttribute="centerX" id="g6T-6k-GhZ"/>
+                            <constraint firstItem="W5A-es-hbN" firstAttribute="bottom" secondItem="ca3-aT-uZQ" secondAttribute="bottom" constant="110" id="gcp-JO-aOG"/>
+                            <constraint firstItem="bAK-xr-J1x" firstAttribute="centerX" secondItem="c30-lM-wHi" secondAttribute="centerX" id="nsf-hJ-Wpl"/>
+                            <constraint firstItem="ca3-aT-uZQ" firstAttribute="top" secondItem="JML-nO-I3V" secondAttribute="bottom" constant="50" id="z5G-ue-c0e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W5A-es-hbN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvf-7U-gtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="193.85307346326837"/>
+        </scene>
         <!--DashboardVC-->
         <scene sceneID="3dq-ZP-lwt">
             <objects>
@@ -707,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwA-jf-vLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416.8" y="-577.06146926536735"/>
+            <point key="canvasLocation" x="1412" y="-577"/>
         </scene>
     </scenes>
     <resources>
@@ -716,6 +759,7 @@
         <image name="backArrow" width="485.05264282226562" height="485.05264282226562"/>
         <image name="boy-1" width="365" height="365"/>
         <image name="camera" width="512" height="512"/>
+        <image name="employee" width="409.60000610351562" height="409.60000610351562"/>
         <image name="menu-button-of-three-horizontal-lines" width="102.40000152587891" height="102.40000152587891"/>
         <image name="spring" width="1498" height="844"/>
         <image name="summer" width="1920" height="1200"/>

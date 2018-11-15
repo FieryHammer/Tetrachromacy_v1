@@ -24,8 +24,18 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ColorService.instance.themes.removeAll()
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
+        
+#if targetEnvironment(simulator)
         imagePicker.sourceType = .photoLibrary
+#else
+        imagePicker.sourceType = .camera
+        imagePicker.cameraDevice = .front
+        
+        let overlay = storyboard?.instantiateViewController(withIdentifier: "CameraOverlay")
+        imagePicker.cameraOverlayView = overlay?.view
+#endif
+        
         imagePicker.delegate = self
         
         seasonImageViews = [springImageView, summerImageView, autumnImageView, winterImageView]
@@ -54,7 +64,18 @@ class SettingsVC: UIViewController {
     }
     
     @objc func cameraContainerTapped() {
+#if targetEnvironment(simulator)
         present(imagePicker, animated: true)
+#else
+        imagePicker.cameraOverlayView?.isHidden = false
+        present(imagePicker, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.imagePicker.cameraOverlayView?.isHidden = true
+        }
+#endif
+        
+        
     }
     
     @objc func seasonImagePressedHandler(recognizer: UITapGestureRecognizer) {

@@ -15,6 +15,7 @@
 		F16242E7219D917000937DE9 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E6219D917000937DE9 /* AccountCell.swift */; };
 		F16242E9219D917D00937DE9 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E8219D917D00937DE9 /* ActivityCell.swift */; };
 		F17E8CFB219DA10D00A3B150 /* AccountsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E8CFA219DA10D00A3B150 /* AccountsVC.swift */; };
+		F17E8D00219DDF1600A3B150 /* CameraOverlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E8CFF219DDF1600A3B150 /* CameraOverlayVC.swift */; };
 		F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A32198824200F493E0 /* AppDelegate.swift */; };
 		F1D464AB2198824200F493E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D464A92198824200F493E0 /* Main.storyboard */; };
 		F1D464AD2198824300F493E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D464AC2198824300F493E0 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		F16242E6219D917000937DE9 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		F16242E8219D917D00937DE9 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F17E8CFA219DA10D00A3B150 /* AccountsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsVC.swift; sourceTree = "<group>"; };
+		F17E8CFF219DDF1600A3B150 /* CameraOverlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraOverlayVC.swift; sourceTree = "<group>"; };
 		F1D464A02198824200F493E0 /* Tetrachromacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetrachromacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D464A32198824200F493E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D464AA2198824200F493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				F1D464C42198882B00F493E0 /* MenuVC.swift */,
 				F1D464D32198B5F000F493E0 /* SettingsVC.swift */,
 				F17E8CFA219DA10D00A3B150 /* AccountsVC.swift */,
+				F17E8CFF219DDF1600A3B150 /* CameraOverlayVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				F16242DF219D675500937DE9 /* RoundedButton.swift in Sources */,
 				F1D464DB21997E0600F493E0 /* UIViewController+ColorSwitching.swift in Sources */,
 				F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */,
+				F17E8D00219DDF1600A3B150 /* CameraOverlayVC.swift in Sources */,
 				F1D464D02198B26500F493E0 /* MenuCell.swift in Sources */,
 				F1D464CC2198A35300F493E0 /* SWRevealViewController.m in Sources */,
 				F16242E3219D8C5700937DE9 /* Account.swift in Sources */,
