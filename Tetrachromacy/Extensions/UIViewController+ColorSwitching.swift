@@ -22,6 +22,7 @@ extension UIViewController {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &viewsWithPrimaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            viewsWithPrimaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.primaryUIColor }
         }
     }
     
@@ -32,6 +33,7 @@ extension UIViewController {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &viewsWithSecondaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            viewsWithSecondaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.secondaryUIColor }
         }
     }
     
@@ -42,6 +44,7 @@ extension UIViewController {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &tableViewsWithPrimaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            tableViewsWithPrimaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.primaryUIColor }
         }
     }
     
@@ -52,15 +55,16 @@ extension UIViewController {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &tableViewsWithSecondaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            tableViewsWithSecondaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.secondaryUIColor }
         }
     }
     
     // Call this method in UIViewControllers where you want to change colors
     func subscribeToColorSwitchingNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(changeColors), name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeViewColors), name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
     }
     
-    @objc func changeColors() {
+    @objc func changeViewColors() {
         // Change background color of views
         viewsWithPrimaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.primaryUIColor }
         viewsWithSecondaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.secondaryUIColor }

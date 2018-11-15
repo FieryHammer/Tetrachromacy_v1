@@ -53,6 +53,9 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
             present(vc, animated: true, completion: nil)
             
+        } else if title == ACCOUNTS_TITLE {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccountsVC") as! AccountsVC
+            present(vc, animated: true, completion: nil)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)

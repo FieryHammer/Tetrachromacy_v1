@@ -11,11 +11,13 @@ import DropDown
 
 class SettingsVC: UIViewController {
 
-    @IBOutlet weak var themePickerBtn: UIButton!
-    @IBOutlet weak var primaryColorView: UIView!
-    @IBOutlet weak var secondaryColorView: UIView!
-    @IBOutlet weak var cameraContainer: RoundedView!
-    @IBOutlet weak var libraryContainer: RoundedView!
+    @IBOutlet weak var cameraImageView: UIImageView!
+    @IBOutlet weak var libraryImageView: UIImageView!
+    
+    @IBOutlet weak var springImageView: UIImageView!
+    @IBOutlet weak var summerImageView: UIImageView!
+    @IBOutlet weak var autumnImageView: UIImageView!
+    @IBOutlet weak var winterImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
     
@@ -28,53 +30,19 @@ class SettingsVC: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
-        setupDefaultLook()
-        setupDropDown()
         setupGestureRecognizers()
-    }
-    
-    func setupDefaultLook() {
-        if let currentColor = ColorService.instance.currentColor {
-            themePickerBtn.setTitle(currentColor.name, for: .normal)
-            primaryColorView.backgroundColor = currentColor.primaryUIColor
-            secondaryColorView.backgroundColor = currentColor.secondaryUIColor
-        } else {
-            primaryColorView.isHidden = true
-            secondaryColorView.isHidden = true
-        }
-    }
-    
-    func setupDropDown() {
-        dropDown.anchorView = themePickerBtn
-        dropDown.direction = .top
-        dropDown.topOffset = CGPoint(x: 0, y: -themePickerBtn.bounds.height)
-        
-        ColorService.instance.getThemes { (success) in
-            if success {
-                self.dropDown.dataSource = ColorService.instance.themes
-                
-                self.dropDown.selectionAction = { [weak self] (index, item) in
-                    self?.themePickerBtn.setTitle(item, for: .normal)
-                    
-                    ColorService.instance.getColorTheme(for: item, completion: { (success, themeColor) in
-                        if success, let newThemeColor = themeColor {
-                            self?.themePicked(newThemeColor)
-                        }
-                    })
-                }
-            }
-        }
+        setupParallax()
     }
     
     func setupGestureRecognizers() {
         let cameraImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cameraContainerTapped))
         let libraryImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(libraryContainerTapped))
         
-        cameraContainer.addGestureRecognizer(cameraImageTapGestureRecognizer)
-        libraryContainer.addGestureRecognizer(libraryImageTapGestureRecognizer)
+        cameraImageView.addGestureRecognizer(cameraImageTapGestureRecognizer)
+        autumnImageView.addGestureRecognizer(libraryImageTapGestureRecognizer)
         
-        cameraContainer.isUserInteractionEnabled = true
-        libraryContainer.isUserInteractionEnabled = true
+        cameraImageView.isUserInteractionEnabled = true
+        autumnImageView.isUserInteractionEnabled = true
     }
     
     @objc func cameraContainerTapped() {
@@ -87,23 +55,41 @@ class SettingsVC: UIViewController {
         present(imagePicker, animated: true)
     }
     
-    func themePicked(_ theme: ThemeColor) {
-        CURRENT_COLOR = theme
-        UIView.animate(withDuration: 0.3) {
-            self.primaryColorView.backgroundColor = CURRENT_COLOR.primaryUIColor
-            self.secondaryColorView.backgroundColor = CURRENT_COLOR.secondaryUIColor
-            
-            if self.primaryColorView.isHidden {
-                self.primaryColorView.isHidden = false
-                self.secondaryColorView.isHidden = false
-            }
-            
-            NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
-        }
-    }
+//    func themePicked(_ theme: ThemeColor) {
+//        CURRENT_COLOR = theme
+//        UIView.animate(withDuration: 0.3) {
+//            self.primaryColorView.backgroundColor = CURRENT_COLOR.primaryUIColor
+//            self.secondaryColorView.backgroundColor = CURRENT_COLOR.secondaryUIColor
+//
+//            if self.primaryColorView.isHidden {
+//                self.primaryColorView.isHidden = false
+//                self.secondaryColorView.isHidden = false
+//            }
+//
+//            NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
+//        }
+//    }
     
-    @IBAction func pickThemePressed(_ sender: Any) {
-        dropDown.show()
+    func setupParallax() {
+        let min: CGFloat = -30
+        let max: CGFloat = 30
+        
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        
+        xMotion.minimumRelativeValue = min
+        xMotion.maximumRelativeValue = max
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = min
+        yMotion.maximumRelativeValue = max
+        
+        let motionEffecGroup = UIMotionEffectGroup()
+        motionEffecGroup.motionEffects = [xMotion, yMotion]
+        
+        springImageView.addMotionEffect(motionEffecGroup)
+        summerImageView.addMotionEffect(motionEffecGroup)
+        autumnImageView.addMotionEffect(motionEffecGroup)
+        winterImageView.addMotionEffect(motionEffecGroup)
     }
    
     @IBAction func backPressed(_ sender: Any) {

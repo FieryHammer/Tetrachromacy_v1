@@ -24,8 +24,12 @@ class DashboardVC: UIViewController {
         setupGestureRecognizers()
         subscribeToColorSwitchingNotification()
         viewsWithPrimaryColor = [view]
-        viewsWithSecondaryColor = [totalBalanceBGView]
+        viewsWithSecondaryColor = []
         tableViewsWithSecondaryColor = [accountsTableView, activitiesTableView]
+    }
+    
+    @IBAction func menuPressed(_ sender: Any) {
+        revealViewController()?.revealToggle(animated: true)
     }
     
     func setupGestureRecognizers() {
