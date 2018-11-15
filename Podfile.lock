@@ -1,24 +1,20 @@
 PODS:
   - Alamofire (4.5.0)
-  - DropDown (2.3.12)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (= 4.5.0)
-  - DropDown
   - SwiftyJSON (= 3.1.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - DropDown
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 184cb87d7c8bcf1c3fc862d06d4f90d08bfd5004
+PODFILE CHECKSUM: 919ba311d4a8a9804310cd7362b31f26b3714270
 
 COCOAPODS: 1.5.3

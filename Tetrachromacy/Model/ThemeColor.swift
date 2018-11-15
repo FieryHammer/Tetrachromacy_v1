@@ -10,11 +10,13 @@ import Foundation
 
 let PRIMARY_COLOR_KEY = "primary_color"
 let SECONDARY_COLOR_KEY = "secondary_color"
+let TERNARY_COLOR_KEY = "ternary_color"
 
 struct ThemeColor {
     let name: String
     let primaryColor: String!
     let secondaryColor: String!
+    let ternaryColor: String!
     var primaryUIColor: UIColor! {
         get {
             return colorFromString(primaryColor)
@@ -25,11 +27,17 @@ struct ThemeColor {
             return colorFromString(secondaryColor)
         }
     }
+    var ternaryUIColor: UIColor! {
+        get {
+            return colorFromString(ternaryColor)
+        }
+    }
     
-    init(name: String, primaryColor: String, secondaryColor: String) {
+    init(name: String, primaryColor: String, secondaryColor: String, ternaryColor: String) {
         self.name = name
         self.primaryColor = primaryColor
         self.secondaryColor = secondaryColor
+        self.ternaryColor = ternaryColor
     }
     
     func colorFromString(_ string: String) -> UIColor {

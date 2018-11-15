@@ -8,5 +8,4 @@ target 'Tetrachromacy' do
   # Pods for Tetrachromacy
     pod 'Alamofire', '4.5.0'
     pod 'SwiftyJSON', '3.1.4'
-    pod 'DropDown'
 end

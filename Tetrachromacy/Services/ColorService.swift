@@ -13,7 +13,11 @@ class ColorService {
     static let instance = ColorService()
     
     var themes = [String]()
-    var currentColor: ThemeColor!
+    var currentColor: ThemeColor! {
+        didSet {
+            NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
+        }
+    }
     
     func getThemes(completion: @escaping (_ success: Bool) -> ()) {
         Alamofire.request(HEROKU_URL, method: .get, parameters: nil, encoding: JSONEncoding.default
@@ -49,7 +53,8 @@ class ColorService {
             
             let primaryColor = json["primary_color"].stringValue
             let secondaryColor = json["secondary_color"].stringValue
-            let colorPicked = ThemeColor(name: name, primaryColor: primaryColor, secondaryColor: secondaryColor)
+            let ternaryColor = json["ternary_color"].stringValue
+            let colorPicked = ThemeColor(name: name, primaryColor: primaryColor, secondaryColor: secondaryColor, ternaryColor: ternaryColor)
             
             completion(true, colorPicked)
         }

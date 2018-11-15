@@ -30,9 +30,21 @@ let MULTIPART_HEADER = [
     "Content-Type": "multipart/form-data"
 ]
 
+// Themes
+
+let DEFAULT_THEME_COLOR = ThemeColor(name: "Default", primaryColor: "[255, 255, 255]", secondaryColor: "[220, 220, 220]", ternaryColor: "[130, 130, 130]")
+
+// Change these colors before people's eyes will start bleeding
+let SPRING_THEME = ThemeColor(name: "Spring", primaryColor: "[243, 168, 188]", secondaryColor: "[245, 173, 148]", ternaryColor: "[255, 241, 166]")
+
+let SUMMER_THEME = ThemeColor(name: "Summer", primaryColor: "[255, 215, 0]", secondaryColor: "[243, 135, 47]", ternaryColor: "[255, 89, 143]")
+
+let AUTUMN_THEME = ThemeColor(name: "Autumn", primaryColor: "[96, 60, 20]", secondaryColor: "[156, 39, 6]", ternaryColor: "[212, 91, 18]")
+
+let WINTER_THEME = ThemeColor(name: "Winter", primaryColor: "[66, 104, 124]", secondaryColor: "[132, 165, 184]", ternaryColor: "[179, 218, 241]")
+
 // Shortcuts
 
-let DEFAULT_THEME_COLOR = ThemeColor(name: "Default", primaryColor: "[255, 255, 255]", secondaryColor: "[255, 255, 255]")
 var CURRENT_COLOR: ThemeColor {
     get {
         return ColorService.instance.currentColor

@@ -10,8 +10,10 @@ import Foundation
 
 private var viewsWithPrimaryColorKey: UInt8 = 0
 private var viewsWithSecondaryColorKey: UInt8 = 1
-private var tableViewsWithPrimaryColorKey: UInt8 = 2
-private var tableViewsWithSecondaryColorKey: UInt8 = 3
+private var viewsWithTernaryColorKey: UInt8 = 2
+private var tableViewsWithPrimaryColorKey: UInt8 = 3
+private var tableViewsWithSecondaryColorKey: UInt8 = 4
+private var tableViewsWithTernaryColorKey: UInt8 = 5
 
 
 extension UIViewController {
@@ -37,6 +39,17 @@ extension UIViewController {
         }
     }
     
+    // Add views to this array where you want the color to be the ternary color
+    var viewsWithTernaryColor: [UIView]? {
+        get {
+            return objc_getAssociatedObject(self, &viewsWithTernaryColorKey) as? [UIView]
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &viewsWithTernaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            viewsWithTernaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.ternaryUIColor }
+        }
+    }
+    
     // Add table views to this array where you want the color to be the primary color
     var tableViewsWithPrimaryColor: [UITableView]? {
         get {
@@ -59,6 +72,17 @@ extension UIViewController {
         }
     }
     
+    // Add table views to this array where you want the color to be the primary color
+    var tableViewsWithTernaryColor: [UITableView]? {
+        get {
+            return objc_getAssociatedObject(self, &tableViewsWithTernaryColorKey) as? [UITableView]
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &tableViewsWithTernaryColorKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            tableViewsWithTernaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.ternaryUIColor }
+        }
+    }
+    
     // Call this method in UIViewControllers where you want to change colors
     func subscribeToColorSwitchingNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(changeViewColors), name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
@@ -68,12 +92,15 @@ extension UIViewController {
         // Change background color of views
         viewsWithPrimaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.primaryUIColor }
         viewsWithSecondaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.secondaryUIColor }
+        viewsWithTernaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.ternaryUIColor}
         tableViewsWithPrimaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.primaryUIColor }
         tableViewsWithSecondaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.secondaryUIColor }
+        tableViewsWithTernaryColor?.forEach { $0.backgroundColor = CURRENT_COLOR.ternaryUIColor }
         
         // Change background color of table view cells
         tableViewsWithPrimaryColor?.forEach { $0.reloadData() }
         tableViewsWithSecondaryColor?.forEach { $0.reloadData() }
+        tableViewsWithTernaryColor?.forEach { $0.reloadData() }
         
     }
     
@@ -90,6 +117,12 @@ extension UIViewController {
         if let secondaryTableViews = tableViewsWithSecondaryColor {
             if secondaryTableViews.contains(tableView) {
                 return CURRENT_COLOR.secondaryUIColor
+            }
+        }
+        
+        if let ternaryTableViews = tableViewsWithTernaryColor {
+            if ternaryTableViews.contains(tableView) {
+                return CURRENT_COLOR.ternaryUIColor
             }
         }
         

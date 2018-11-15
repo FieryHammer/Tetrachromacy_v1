@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -17,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DropDown.startListeningToKeyboard()
-        
         CURRENT_COLOR = DEFAULT_THEME_COLOR
         ColorService.instance.getColorTheme(for: "Default") { (success, themeColor) in
             if success, let newColor = themeColor {

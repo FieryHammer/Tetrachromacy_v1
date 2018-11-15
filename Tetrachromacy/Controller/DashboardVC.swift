@@ -24,7 +24,7 @@ class DashboardVC: UIViewController {
         setupGestureRecognizers()
         subscribeToColorSwitchingNotification()
         viewsWithPrimaryColor = [view]
-        viewsWithSecondaryColor = []
+        viewsWithTernaryColor = [totalBalanceBGView]
         tableViewsWithSecondaryColor = [accountsTableView, activitiesTableView]
     }
     

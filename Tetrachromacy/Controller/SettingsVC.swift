@@ -7,68 +7,67 @@
 //
 
 import UIKit
-import DropDown
 
 class SettingsVC: UIViewController {
 
-    @IBOutlet weak var cameraImageView: UIImageView!
-    @IBOutlet weak var libraryImageView: UIImageView!
+    @IBOutlet weak var cameraImageContainer: RoundedView!
     
     @IBOutlet weak var springImageView: UIImageView!
     @IBOutlet weak var summerImageView: UIImageView!
     @IBOutlet weak var autumnImageView: UIImageView!
     @IBOutlet weak var winterImageView: UIImageView!
     
-    let imagePicker = UIImagePickerController()
+    private var seasonImageViews = [UIImageView]()
     
-    let dropDown = DropDown()
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ColorService.instance.themes.removeAll()
-        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
+        seasonImageViews = [springImageView, summerImageView, autumnImageView, winterImageView]
+        
+        subscribeToColorSwitchingNotification()
+        viewsWithPrimaryColor = [view]
+        viewsWithTernaryColor = [cameraImageContainer]
         setupGestureRecognizers()
         setupParallax()
     }
     
     func setupGestureRecognizers() {
         let cameraImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cameraContainerTapped))
-        let libraryImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(libraryContainerTapped))
+        cameraImageContainer.addGestureRecognizer(cameraImageTapGestureRecognizer)
+        cameraImageContainer.isUserInteractionEnabled = true
         
-        cameraImageView.addGestureRecognizer(cameraImageTapGestureRecognizer)
-        autumnImageView.addGestureRecognizer(libraryImageTapGestureRecognizer)
+        seasonImageViews.forEach {
+            $0.addGestureRecognizer(getImageTapGestureRecognizer())
+            $0.isUserInteractionEnabled = true
+        }
+    }
+    
+    func getImageTapGestureRecognizer() -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(seasonImagePressedHandler(recognizer:)))
         
-        cameraImageView.isUserInteractionEnabled = true
-        autumnImageView.isUserInteractionEnabled = true
     }
     
     @objc func cameraContainerTapped() {
-        imagePicker.sourceType = .camera
         present(imagePicker, animated: true)
     }
     
-    @objc func libraryContainerTapped() {
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true)
+    @objc func seasonImagePressedHandler(recognizer: UITapGestureRecognizer) {
+        if recognizer.view == springImageView {
+            CURRENT_COLOR = SPRING_THEME
+        } else if recognizer.view == summerImageView {
+            CURRENT_COLOR = SUMMER_THEME
+        } else if recognizer.view == autumnImageView {
+            CURRENT_COLOR = AUTUMN_THEME
+        } else if recognizer.view == winterImageView {
+            CURRENT_COLOR = WINTER_THEME
+        }
     }
-    
-//    func themePicked(_ theme: ThemeColor) {
-//        CURRENT_COLOR = theme
-//        UIView.animate(withDuration: 0.3) {
-//            self.primaryColorView.backgroundColor = CURRENT_COLOR.primaryUIColor
-//            self.secondaryColorView.backgroundColor = CURRENT_COLOR.secondaryUIColor
-//
-//            if self.primaryColorView.isHidden {
-//                self.primaryColorView.isHidden = false
-//                self.secondaryColorView.isHidden = false
-//            }
-//
-//            NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
-//        }
-//    }
     
     func setupParallax() {
         let min: CGFloat = -30

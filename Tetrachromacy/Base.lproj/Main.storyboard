@@ -699,7 +699,7 @@
                     </view>
                     <connections>
                         <outlet property="autumnImageView" destination="qcJ-WP-azR" id="UJS-OP-vVG"/>
-                        <outlet property="cameraImageView" destination="y70-Bi-KxD" id="VIZ-ZE-gKw"/>
+                        <outlet property="cameraImageContainer" destination="EJc-v4-A11" id="5eD-Ls-AsV"/>
                         <outlet property="springImageView" destination="ztD-dM-EJj" id="gwb-Sb-40w"/>
                         <outlet property="summerImageView" destination="d8c-FJ-toy" id="5j8-fM-oA2"/>
                         <outlet property="winterImageView" destination="9iI-Od-vkb" id="ut2-BD-lYq"/>
