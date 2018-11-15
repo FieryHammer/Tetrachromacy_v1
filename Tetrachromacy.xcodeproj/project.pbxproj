@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BF1016565D82DDB1603807CB /* Pods_Tetrachromacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */; };
+		F16242DF219D675500937DE9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242DE219D675500937DE9 /* RoundedButton.swift */; };
+		F16242E1219D6EFE00937DE9 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E0219D6EFE00937DE9 /* RoundedView.swift */; };
+		F16242E3219D8C5700937DE9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E2219D8C5700937DE9 /* Account.swift */; };
+		F16242E5219D8C6000937DE9 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E4219D8C6000937DE9 /* Activity.swift */; };
+		F16242E7219D917000937DE9 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E6219D917000937DE9 /* AccountCell.swift */; };
+		F16242E9219D917D00937DE9 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16242E8219D917D00937DE9 /* ActivityCell.swift */; };
 		F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D464A32198824200F493E0 /* AppDelegate.swift */; };
 		F1D464AB2198824200F493E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D464A92198824200F493E0 /* Main.storyboard */; };
 		F1D464AD2198824300F493E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D464AC2198824300F493E0 /* Assets.xcassets */; };
@@ -27,6 +33,12 @@
 /* Begin PBXFileReference section */
 		3891632E98679B997F51CF8C /* Pods_Tetrachromacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tetrachromacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1B7A34396B528F859F30E6 /* Pods-Tetrachromacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetrachromacy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tetrachromacy/Pods-Tetrachromacy.debug.xcconfig"; sourceTree = "<group>"; };
+		F16242DE219D675500937DE9 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F16242E0219D6EFE00937DE9 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		F16242E2219D8C5700937DE9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		F16242E4219D8C6000937DE9 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		F16242E6219D917000937DE9 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		F16242E8219D917D00937DE9 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F1D464A02198824200F493E0 /* Tetrachromacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetrachromacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D464A32198824200F493E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D464AA2198824200F493E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				F1D464D72198DBB200F493E0 /* ThemeColor.swift */,
+				F16242E2219D8C5700937DE9 /* Account.swift */,
+				F16242E4219D8C6000937DE9 /* Activity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +141,10 @@
 			children = (
 				F1D464CD2198A56E00F493E0 /* CircleImageView.swift */,
 				F1D464CF2198B26500F493E0 /* MenuCell.swift */,
+				F16242DE219D675500937DE9 /* RoundedButton.swift */,
+				F16242E0219D6EFE00937DE9 /* RoundedView.swift */,
+				F16242E6219D917000937DE9 /* AccountCell.swift */,
+				F16242E8219D917D00937DE9 /* ActivityCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,17 +310,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16242E5219D8C6000937DE9 /* Activity.swift in Sources */,
 				F1D464A42198824200F493E0 /* AppDelegate.swift in Sources */,
 				F1D464C32198881F00F493E0 /* DashboardVC.swift in Sources */,
 				F1D464C52198882B00F493E0 /* MenuVC.swift in Sources */,
 				F1D464D62198DA0D00F493E0 /* ColorService.swift in Sources */,
 				F1D464CE2198A56E00F493E0 /* CircleImageView.swift in Sources */,
 				F1D464D22198B3C700F493E0 /* Constants.swift in Sources */,
+				F16242E9219D917D00937DE9 /* ActivityCell.swift in Sources */,
 				F1D464D42198B5F000F493E0 /* SettingsVC.swift in Sources */,
+				F16242E1219D6EFE00937DE9 /* RoundedView.swift in Sources */,
+				F16242E7219D917000937DE9 /* AccountCell.swift in Sources */,
+				F16242DF219D675500937DE9 /* RoundedButton.swift in Sources */,
 				F1D464DB21997E0600F493E0 /* UIViewController+ColorSwitching.swift in Sources */,
 				F1D464D82198DBB200F493E0 /* ThemeColor.swift in Sources */,
 				F1D464D02198B26500F493E0 /* MenuCell.swift in Sources */,
 				F1D464CC2198A35300F493E0 /* SWRevealViewController.m in Sources */,
+				F16242E3219D8C5700937DE9 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

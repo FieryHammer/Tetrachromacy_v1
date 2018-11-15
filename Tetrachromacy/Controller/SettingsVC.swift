@@ -14,6 +14,8 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var themePickerBtn: UIButton!
     @IBOutlet weak var primaryColorView: UIView!
     @IBOutlet weak var secondaryColorView: UIView!
+    @IBOutlet weak var cameraContainer: RoundedView!
+    @IBOutlet weak var libraryContainer: RoundedView!
     
     let imagePicker = UIImagePickerController()
     
@@ -28,6 +30,7 @@ class SettingsVC: UIViewController {
         
         setupDefaultLook()
         setupDropDown()
+        setupGestureRecognizers()
     }
     
     func setupDefaultLook() {
@@ -63,6 +66,27 @@ class SettingsVC: UIViewController {
         }
     }
     
+    func setupGestureRecognizers() {
+        let cameraImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(cameraContainerTapped))
+        let libraryImageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(libraryContainerTapped))
+        
+        cameraContainer.addGestureRecognizer(cameraImageTapGestureRecognizer)
+        libraryContainer.addGestureRecognizer(libraryImageTapGestureRecognizer)
+        
+        cameraContainer.isUserInteractionEnabled = true
+        libraryContainer.isUserInteractionEnabled = true
+    }
+    
+    @objc func cameraContainerTapped() {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true)
+    }
+    
+    @objc func libraryContainerTapped() {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true)
+    }
+    
     func themePicked(_ theme: ThemeColor) {
         CURRENT_COLOR = theme
         UIView.animate(withDuration: 0.3) {
@@ -76,10 +100,6 @@ class SettingsVC: UIViewController {
             
             NotificationCenter.default.post(name: NOTIFICATION_CURRENT_COLOR_DID_CHANGE, object: nil)
         }
-    }
-    
-    @IBAction func takePhotoPressed(_ sender: Any) {
-        present(imagePicker, animated: true)
     }
     
     @IBAction func pickThemePressed(_ sender: Any) {
